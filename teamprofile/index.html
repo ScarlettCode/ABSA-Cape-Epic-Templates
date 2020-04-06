@@ -1,0 +1,374 @@
+<style>
+  html,
+  body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<body>
+
+  <div>
+    <div id="bm"></div>
+  </div>
+
+</body>
+
+<script src="../scripts/lottie.min.js" type="text/javascript"></script>
+<script src="../scripts/utils.js" type="text/javascript"></script>
+<script src="../scripts/webfontloader.js" type="text/javascript"></script>
+<script src="../scripts/moment.min.js" type="text/javascript"></script>
+<script src="../scripts/countdown.min.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+
+<script>
+  WebFont.load({
+    custom: {
+      urls: ["../fonts/stylesheet.css"]
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  var container = document.getElementById("bm");
+
+  var animation = bodymovin.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    animationData: test,
+    font: "",
+    rendererSettings: {}
+  });
+
+  if (debug) {
+    findElementLocations(animation);
+    animation.play();
+
+  }
+
+  function play() {
+    animation.stop();
+    animation.play();
+
+  }
+
+  function stop() {
+    animation.stop();
+    animation.play();
+  }
+
+  function update(xml) {
+
+    const catName = document.getElementById("CatName");
+    const catNameText = document.getElementById("CatNameText");
+
+    var parser = new DOMParser();
+    var xmlDocument = parser.parseFromString(xml, "text/xml");
+
+    var teamName = xmlDocument.evaluate(
+      "/templateData/componentData[@id='teamName']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var teamCategory = xmlDocument.evaluate(
+      "/templateData/componentData[@id='teamCategory']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Name = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1Name']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1RaceNumber = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1RaceNumber']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Age = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1Age']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1EpicsComplete = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1EpicsComplete']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1StageWins = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1StageWins']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1OverallWins = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1OverallWins']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Highlights = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1Highlights']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1CountryCode = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1CountryCode']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Image = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider1Image']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2Name = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2Name']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2RaceNumber = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2RaceNumber']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2Age = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2Age']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2EpicsComplete = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2EpicsComplete']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2StageWins = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2StageWins']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2OverallWins = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2OverallWins']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2Highlights = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2Highlights']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2CountryCode = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2CountryCode']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider2Image = xmlDocument.evaluate(
+      "/templateData/componentData[@id='rider2Image']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    const imageElements = container.getElementsByTagName("image");
+
+    for (let i = 0; i < imageElements.length; i++) {
+      const element = imageElements[i];
+      if (~element.getAttribute("href").search("images/img_6.png")) {
+        element.setAttribute("href", "../flags/" +
+          rider1CountryCode + ".png");
+      }
+      if (~element.getAttribute("href").search("images/img_4.png")) {
+        element.setAttribute("href", "../flags/" +
+          rider2CountryCode + ".png");
+      }
+      if (~element.getAttribute("href").search("images/img_5.png")) {
+        element.setAttribute("href", rider1Image);
+      }
+      if (~element.getAttribute("href").search("images/img_3.png")) {
+        element.setAttribute("href", rider2Image);
+      }
+    }
+
+
+
+    animation.renderer.elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[0].updateDocumentData({
+        t: teamName
+      },
+      0
+    );
+
+    animation.renderer.elements[2].elements[0].canResizeFont(true);
+    animation.renderer.elements[2].elements[0].updateDocumentData({
+        t: teamCategory
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[2].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[2].elements[0].updateDocumentData({
+        t: rider1Name
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[7].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[7].elements[0].updateDocumentData({
+        t: rider1Age
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[9].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[9].elements[0].updateDocumentData({
+        t: rider1EpicsComplete
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[11].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[11].elements[0].updateDocumentData({
+        t: rider1StageWins
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[13].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[13].elements[0].updateDocumentData({
+        t: rider1OverallWins
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[15].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[15].elements[0].updateDocumentData({
+        t: rider1Highlights
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[0].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[0].elements[0].updateDocumentData({
+        t: rider1RaceNumber
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[2].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[2].elements[0].updateDocumentData({
+        t: rider2Name
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[7].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[7].elements[0].updateDocumentData({
+        t: rider2Age
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[9].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[9].elements[0].updateDocumentData({
+        t: rider2EpicsComplete
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[11].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[11].elements[0].updateDocumentData({
+        t: rider2StageWins
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[13].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[13].elements[0].updateDocumentData({
+        t: rider2OverallWins
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[15].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[15].elements[0].updateDocumentData({
+        t: rider2Highlights
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[0].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[0].elements[0].updateDocumentData({
+        t: rider2RaceNumber
+      },
+      0
+    );
+
+    var colour = convertCategoryToColour(teamCategory)
+
+    catName.childNodes[0].childNodes[0].style.fill = colour;
+
+    convertCategoryNameTextColour(catNameText, teamCategory);
+
+  }
+</script>

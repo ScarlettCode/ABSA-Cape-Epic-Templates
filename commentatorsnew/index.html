@@ -1,0 +1,148 @@
+<style>
+  html,
+  body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<body>
+
+  <div>
+    <div id="bm"></div>
+  </div>
+
+</body>
+
+<script src="../scripts/lottie.min.js" type="text/javascript"></script>
+<script src="../scripts/utils.js" type="text/javascript"></script>
+<script src="../scripts/webfontloader.js" type="text/javascript"></script>
+<script src="../scripts/moment.min.js" type="text/javascript"></script>
+<script src="../scripts/countdown.min.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+
+<script>
+  WebFont.load({
+    custom: {
+      urls: ["../fonts/stylesheet.css"]
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  var container = document.getElementById("bm");
+
+  var animation = bodymovin.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    animationData: test,
+    font: "",
+    rendererSettings: {}
+  });
+
+  if (debug) {
+    findElementLocations(animation);
+    animation.play();
+  }
+
+  function play() {
+    animation.stop();
+    animation.play();
+  }
+
+  function stop() {
+    animation.stop();
+    animation.play();
+  }
+
+  function update(xml) {
+    var parser = new DOMParser();
+    var xmlDocument = parser.parseFromString(xml, "text/xml");
+
+    line1 = xmlDocument.evaluate(
+      "/templateData/componentData[@id='line1']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    line2 = xmlDocument.evaluate(
+      "/templateData/componentData[@id='line2']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    line3 = xmlDocument.evaluate(
+      "/templateData/componentData[@id='line3']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    line4 = xmlDocument.evaluate(
+      "/templateData/componentData[@id='line4']/data/@value",
+      xmlDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+
+    animation.renderer.elements[1].elements[2].elements[3].elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[2].elements[3].elements[1].elements[0].updateDocumentData({
+        t: line1
+      },
+      0
+    );
+
+    animation.renderer.elements[1].elements[2].elements[2].elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[2].elements[2].elements[1].elements[0].updateDocumentData({
+        t: line2
+      },
+      0
+    );
+
+    animation.renderer.elements[1].elements[2].elements[1].elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[2].elements[1].elements[1].elements[0].updateDocumentData({
+        t: line3
+      },
+      0
+    );
+
+    animation.renderer.elements[1].elements[2].elements[0].elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[2].elements[0].elements[1].elements[0].updateDocumentData({
+        t: line4
+      },
+      0
+    );
+
+
+    if (line1.length == '0') {
+      document.getElementById("Line1").style.visibility = "hidden";
+    }
+
+    if (line2.length == '0') {
+      document.getElementById("Line2").style.visibility = "hidden";
+    }
+
+    if (line3.length == '0') {
+      document.getElementById("Line3").style.visibility = "hidden";
+    }
+
+    if (line4.length == '0') {
+      document.getElementById("Line4").style.visibility = "hidden";
+    }
+
+
+
+  }
+</script>

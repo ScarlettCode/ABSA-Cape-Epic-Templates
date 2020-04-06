@@ -1,0 +1,400 @@
+@font-face {
+    font-family: 'Gotham MonoSpace Numbers Narrow Book';
+    src: url('Gotham_MonoSpace_Numbers_Narrow-Book.woff2') format('woff2'),
+        url('Gotham_MonoSpace_Numbers_Narrow-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham MonoSpace Numbers Narrow';
+    src: url('Gotham-MSNNarrow-Bold.woff2') format('woff2'),
+        url('Gotham-MSNNarrow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-Black.woff2') format('woff2'),
+        url('GothamNarrow-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Bold.woff2') format('woff2'),
+        url('Gotham-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow XLight';
+    src: url('GothamNarrow-XLightItalic.woff2') format('woff2'),
+        url('GothamNarrow-XLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('Gotham-BookItalic.woff2') format('woff2'),
+        url('Gotham-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow XLight';
+    src: url('GothamNarrow-XLight.woff2') format('woff2'),
+        url('GothamNarrow-XLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-ThinItalic.woff2') format('woff2'),
+        url('Gotham-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-LightItalic.woff2') format('woff2'),
+        url('GothamXNarrow-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Bold.woff2') format('woff2'),
+        url('GothamXNarrow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow Book';
+    src: url('GothamXNarrow-Book.woff2') format('woff2'),
+        url('GothamXNarrow-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-BlackItalic.woff2') format('woff2'),
+        url('GothamNarrow-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('Gotham-Ultra.woff2') format('woff2'),
+        url('Gotham-Ultra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('Gotham-Book.woff2') format('woff2'),
+        url('Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-LightItalic.woff2') format('woff2'),
+        url('Gotham-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow Book';
+    src: url('GothamXNarrow-BookItalic.woff2') format('woff2'),
+        url('GothamXNarrow-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-Medium.woff2') format('woff2'),
+        url('GothamNarrow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Medium.woff2') format('woff2'),
+        url('Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('Gotham-UltraItalic.woff2') format('woff2'),
+        url('Gotham-UltraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow Book';
+    src: url('GothamNarrow-Book.woff2') format('woff2'),
+        url('GothamNarrow-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-BoldItalic.woff2') format('woff2'),
+        url('GothamXNarrow-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-MediumItalic.woff2') format('woff2'),
+        url('GothamNarrow-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-BoldItalic.woff2') format('woff2'),
+        url('GothamNarrow-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow Book';
+    src: url('GothamXNarrow-Book.woff2') format('woff2'),
+        url('GothamXNarrow-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Light.woff2') format('woff2'),
+        url('Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow Ultra';
+    src: url('GothamNarrow-Ultra.woff2') format('woff2'),
+        url('GothamNarrow-Ultra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Black.woff2') format('woff2'),
+        url('Gotham-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-BoldItalic.woff2') format('woff2'),
+        url('Gotham-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-LightItalic.woff2') format('woff2'),
+        url('GothamNarrow-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Thin.woff2') format('woff2'),
+        url('Gotham-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-Bold.woff2') format('woff2'),
+        url('GothamNarrow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Light.woff2') format('woff2'),
+        url('GothamXNarrow-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Medium.woff2') format('woff2'),
+        url('GothamXNarrow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow Book';
+    src: url('GothamNarrow-BookItalic.woff2') format('woff2'),
+        url('GothamNarrow-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow Book';
+    src: url('GothamXNarrow-BookItalic.woff2') format('woff2'),
+        url('GothamXNarrow-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-MediumItalic.woff2') format('woff2'),
+        url('GothamXNarrow-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Light.woff2') format('woff2'),
+        url('GothamXNarrow-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow Ultra';
+    src: url('GothamNarrow-UltraItalic.woff2') format('woff2'),
+        url('GothamNarrow-UltraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Bold.woff2') format('woff2'),
+        url('GothamXNarrow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Extra';
+    src: url('Gotham-ExtraLight.woff2') format('woff2'),
+        url('Gotham-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-Thin.woff2') format('woff2'),
+        url('GothamNarrow-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-Light.woff2') format('woff2'),
+        url('GothamNarrow-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-MediumItalic.woff2') format('woff2'),
+        url('Gotham-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-LightItalic.woff2') format('woff2'),
+        url('GothamXNarrow-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-Medium.woff2') format('woff2'),
+        url('GothamXNarrow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-BlackItalic.woff2') format('woff2'),
+        url('Gotham-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Extra';
+    src: url('Gotham-ExtraLightItalic.woff2') format('woff2'),
+        url('Gotham-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-MediumItalic.woff2') format('woff2'),
+        url('GothamXNarrow-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('GothamXNarrow-BoldItalic.woff2') format('woff2'),
+        url('GothamXNarrow-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('GothamNarrow-ThinItalic.woff2') format('woff2'),
+        url('GothamNarrow-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+

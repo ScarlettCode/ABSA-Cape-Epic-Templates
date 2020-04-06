@@ -1,0 +1,602 @@
+<style>
+  html,
+  body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<body>
+  <div>
+    <div id="bm"></div>
+  </div>
+</body>
+
+<script src="../scripts/lottie.min.js" type="text/javascript"></script>
+<script src="../scripts/utils.js" type="text/javascript"></script>
+<script src="../scripts/webfontloader.js" type="text/javascript"></script>
+<script src="../scripts/moment.min.js" type="text/javascript"></script>
+<script src="../scripts/countdown.min.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+
+<script>
+  WebFont.load({
+    custom: {
+      urls: ["../fonts/stylesheet.css"]
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  var container = document.getElementById("bm");
+
+  var animation = bodymovin.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    animationData: test,
+    font: "",
+    rendererSettings: {}
+  });
+
+  if (debug) {
+    findElementLocations(animation);
+    animation.play();
+  }
+
+  function play() {
+    animation.stop();
+    animation.play();
+  }
+
+  function stop() {
+    animation.stop();
+    animation.play();
+  }
+
+  function update(xml) {
+    var parser = new DOMParser();
+    var xlmDocument = parser.parseFromString(xml, "text/xml");
+    category = xlmDocument.evaluate(
+      "/templateData/componentData[@id='category']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    title = xlmDocument.evaluate(
+      "/templateData/componentData[@id='title']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1position = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1position']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1rider1name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1rider1name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1rider1country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1rider1country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1rider2name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1rider2name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1rider2country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1rider2country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1time = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1time']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2position = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2position']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2rider1name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2rider1name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2rider1country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2rider1country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2rider2name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2rider2name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2rider2country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2rider2country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2time = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2time']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3position = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3position']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3rider1name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3rider1name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3rider1country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3rider1country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3rider2name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3rider2name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3rider2country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3rider2country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3time = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3time']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4position = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4position']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4rider1name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4rider1name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4rider1country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4rider1country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4rider2name = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4rider2name']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4rider2country = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4rider2country']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4time = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4time']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team1isselected = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team1isSelected']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team2isselected = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team2isSelected']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team3isselected = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team3isSelected']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    team4isselected = xlmDocument.evaluate(
+      "/templateData/componentData[@id='team4isSelected']/data/@value",
+      xlmDocument,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    if (team1name.length < 2) {
+      document.getElementById("Line1").style.visibility = "hidden";
+    }
+
+    if (team2name.length < 2) {
+      document.getElementById("Line2").style.visibility = "hidden";
+    }
+
+
+    if (team3name.length < 2) {
+      document.getElementById("Line3").style.visibility = "hidden";
+    }
+
+
+    if (team4name.length < 2) {
+      document.getElementById("Line4").style.visibility = "hidden";
+    }
+
+
+    animation.renderer.elements[1].elements[1].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[1].elements[0].updateDocumentData({
+        t: category
+      },
+      0
+    );
+
+    animation.renderer.elements[1].elements[3].elements[0].canResizeFont(true);
+    animation.renderer.elements[1].elements[3].elements[0].updateDocumentData({
+        t: title
+      },
+      0
+    );
+
+    animation.renderer.elements[3].elements[3].canResizeFont(true);
+    animation.renderer.elements[3].elements[3].updateDocumentData({
+        t: team1position
+      },
+      0
+    );
+
+    animation.renderer.elements[3].elements[4].canResizeFont(true);
+    animation.renderer.elements[3].elements[4].updateDocumentData({
+        t: team1rider1name
+      },
+      0
+    );
+
+    animation.renderer.elements[3].elements[2].canResizeFont(true);
+    animation.renderer.elements[3].elements[2].updateDocumentData({
+        t: team1rider2name
+      },
+      0
+    );
+
+    animation.renderer.elements[3].elements[0].canResizeFont(true);
+    animation.renderer.elements[3].elements[0].updateDocumentData({
+        t: team1name
+      },
+      0
+    );
+
+    animation.renderer.elements[3].elements[1].canResizeFont(true);
+    animation.renderer.elements[3].elements[1].updateDocumentData({
+        t: team1time
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[3].canResizeFont(true);
+    animation.renderer.elements[5].elements[3].updateDocumentData({
+        t: team2position
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[4].canResizeFont(true);
+    animation.renderer.elements[5].elements[4].updateDocumentData({
+        t: team2rider1name
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[2].canResizeFont(true);
+    animation.renderer.elements[5].elements[2].updateDocumentData({
+        t: team2rider2name
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[0].canResizeFont(true);
+    animation.renderer.elements[5].elements[0].updateDocumentData({
+        t: team2name
+      },
+      0
+    );
+
+    animation.renderer.elements[5].elements[1].canResizeFont(true);
+    animation.renderer.elements[5].elements[1].updateDocumentData({
+        t: team2time
+      },
+      0
+    );
+
+    animation.renderer.elements[7].elements[3].canResizeFont(true);
+    animation.renderer.elements[7].elements[3].updateDocumentData({
+        t: team3position
+      },
+      0
+    );
+
+    animation.renderer.elements[7].elements[4].canResizeFont(true);
+    animation.renderer.elements[7].elements[4].updateDocumentData({
+        t: team3rider1name
+      },
+      0
+    );
+
+    animation.renderer.elements[7].elements[2].canResizeFont(true);
+    animation.renderer.elements[7].elements[2].updateDocumentData({
+        t: team3rider2name
+      },
+      0
+    );
+
+    animation.renderer.elements[7].elements[0].canResizeFont(true);
+    animation.renderer.elements[7].elements[0].updateDocumentData({
+        t: team3name
+      },
+      0
+    );
+
+    animation.renderer.elements[7].elements[1].canResizeFont(true);
+    animation.renderer.elements[7].elements[1].updateDocumentData({
+        t: team3time
+      },
+      0
+    );
+
+    animation.renderer.elements[9].elements[3].canResizeFont(true);
+    animation.renderer.elements[9].elements[3].updateDocumentData({
+        t: team4position
+      },
+      0
+    );
+
+    animation.renderer.elements[9].elements[4].canResizeFont(true);
+    animation.renderer.elements[9].elements[4].updateDocumentData({
+        t: team4rider1name
+      },
+      0
+    );
+
+    animation.renderer.elements[9].elements[2].canResizeFont(true);
+    animation.renderer.elements[9].elements[2].updateDocumentData({
+        t: team4rider2name
+      },
+      0
+    );
+
+    animation.renderer.elements[9].elements[0].canResizeFont(true);
+    animation.renderer.elements[9].elements[0].updateDocumentData({
+        t: team4name
+      },
+      0
+    );
+
+    animation.renderer.elements[9].elements[1].canResizeFont(true);
+    animation.renderer.elements[9].elements[1].updateDocumentData({
+        t: team4time
+      },
+      0
+    );
+
+    const imageElements = container.getElementsByTagName("image");
+    for (let i = 0; i < imageElements.length; i++) {
+      const element = imageElements[i];
+      updateFlag(element, "img_4.png", team1rider1country);
+      updateFlag(element, "img_3.png", team1rider2country);
+
+      updateFlag(element, "img_6.png", team2rider1country);
+      updateFlag(element, "img_5.png", team2rider2country);
+
+      updateFlag(element, "img_8.png", team3rider1country);
+      updateFlag(element, "img_7.png", team3rider2country);
+
+      updateFlag(element, "img_10.png", team4rider1country);
+      updateFlag(element, "img_9.png", team4rider2country);
+    }
+
+    const catName = document.getElementById("CatName");
+    var catColour = convertCategoryToColour(category);
+    catName.childNodes[0].childNodes[0].style.fill = catColour;
+
+    for (i = 1; i < 4; i++) {
+      const linePosition = document.getElementById("Line" + i + "Position");
+      const lineTeam = document.getElementById("Line" + i + "Team");
+      const lineTime = document.getElementById("Line" + i + "Time");
+
+      linePosition.childNodes[0].childNodes[0].style.fill = greyColour;
+      lineTeam.childNodes[0].childNodes[0].style.fill = greyColour;
+      lineTime.childNodes[0].childNodes[0].style.fill = blackColour;
+    }
+
+    updateLineTextColour("Line1Text", "white");
+    updateLineTextColour("Line2Text", "white");
+    updateLineTextColour("Line3Text", "white");
+    updateLineTextColour("Line4Text", "white");
+
+    const line1Position = document.getElementById("Line1Position");
+    const line1Team = document.getElementById("Line1Team");
+    const line1Time = document.getElementById("Line1Time");
+
+    const line2Position = document.getElementById("Line2Position");
+    const line2Team = document.getElementById("Line2Team");
+    const line2Time = document.getElementById("Line2Time");
+
+    const line3Position = document.getElementById("Line3Position");
+    const line3Team = document.getElementById("Line3Team");
+    const line3Time = document.getElementById("Line3Time");
+
+    const line4Position = document.getElementById("Line4Position");
+    const line4Team = document.getElementById("Line4Team");
+    const line4Time = document.getElementById("Line4Time");
+
+    if (team1isselected == "true") {
+      updateLineTextColour("Line1Text", "black");
+      line1Position.childNodes[0].childNodes[0].style.fill = "white";
+      line1Team.childNodes[0].childNodes[0].style.fill = "white";
+      line1Time.childNodes[0].childNodes[0].style.fill = "white";
+    }
+
+    if (team2isselected == "true") {
+      updateLineTextColour("Line2Text", "black");
+      line2Position.childNodes[0].childNodes[0].style.fill = "white";
+      line2Team.childNodes[0].childNodes[0].style.fill = "white";
+      line2Time.childNodes[0].childNodes[0].style.fill = "white";
+    }
+
+    if (team3isselected == "true") {
+      updateLineTextColour("Line3Text", "black");
+      line3Position.childNodes[0].childNodes[0].style.fill = "white";
+      line3Team.childNodes[0].childNodes[0].style.fill = "white";
+      line3Time.childNodes[0].childNodes[0].style.fill = "white";
+    }
+
+    if (team4isselected == "true") {
+      updateLineTextColour("Line4Text", "black");
+      line4Position.childNodes[0].childNodes[0].style.fill = "white";
+      line4Team.childNodes[0].childNodes[0].style.fill = "white";
+      line4Time.childNodes[0].childNodes[0].style.fill = "white";
+    }
+  }
+
+  function updateLineTextColour(elementClass, colour) {
+    const line3Text = document.getElementsByClassName(elementClass);
+
+    for (let line3 of line3Text) {
+      line3.style.fill = colour;
+    }
+  }
+
+  function updateFlag(element, currentFlag, newFlag) {
+    if (~element.getAttribute("href").search("images/" + currentFlag)) {
+      element.setAttribute("href", "../flags/" + newFlag + ".png");
+    }
+  }
+</script>

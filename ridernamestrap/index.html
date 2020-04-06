@@ -1,0 +1,179 @@
+<style>
+  html,
+  body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<body>
+
+  <div>
+    <div id="bm"></div>
+  </div>
+
+</body>
+<script src="../scripts/lottie.min.js" type="text/javascript"></script>
+<script src="../scripts/utils.js" type="text/javascript"></script>
+<script src="../scripts/webfontloader.js" type="text/javascript"></script>
+<script src="../scripts/moment.min.js" type="text/javascript"></script>
+<script src="../scripts/countdown.min.js" type="text/javascript"></script>
+
+<script src="data.js" type="text/javascript"></script>
+
+<script>
+  WebFont.load({
+    custom: {
+      urls: ["../fonts/stylesheet.css"]
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  var container = document.getElementById("bm");
+
+  var animation = bodymovin.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    animationData: test,
+    font: "",
+    rendererSettings: {}
+  });
+
+  if (debug) {
+    findElementLocations(animation);
+    animation.play();
+  }
+
+  function play() {
+    animation.stop();
+    animation.play();
+  }
+
+  function stop() {
+    animation.stop();
+    animation.play();
+  }
+
+  function update(xml) {
+    var parser = new DOMParser();
+    var document = parser.parseFromString(xml, "text/xml");
+
+    var team = document.evaluate(
+      "/templateData/componentData[@id='teamName']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Name = document.evaluate(
+      "/templateData/componentData[@id='rider1Name']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1RaceNumber = document.evaluate(
+      "/templateData/componentData[@id='rider1RaceNumber']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Age = document.evaluate(
+      "/templateData/componentData[@id='rider1Age']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1EpicsComplete = document.evaluate(
+      "/templateData/componentData[@id='rider1EpicsComplete']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1StageWins = document.evaluate(
+      "/templateData/componentData[@id='rider1StageWins']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1OverallWins = document.evaluate(
+      "/templateData/componentData[@id='rider1OverallWins']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Highlights = document.evaluate(
+      "/templateData/componentData[@id='rider1Highlights']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1CountryCode = document.evaluate(
+      "/templateData/componentData[@id='rider1CountryCode']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    var rider1Image = document.evaluate(
+      "/templateData/componentData[@id='rider1Image']/data/@value",
+      document,
+      null,
+      XPathResult.STRING_TYPE,
+      null
+    ).stringValue;
+
+    const imageElements = container.getElementsByTagName("image");
+    for (let i = 0; i < imageElements.length; i++) {
+      const element = imageElements[i];
+      if (~element.getAttribute("href").search("images/img_1.png")) {
+        element.setAttribute("href", "../flags/" +
+          rider1CountryCode + ".png");
+      }
+    }
+
+    animation.renderer.elements[0].elements[0].canResizeFont(true);
+    animation.renderer.elements[0].elements[0].updateDocumentData({
+        t: rider1RaceNumber
+      },
+      0
+    );
+
+    animation.renderer.elements[4].elements[0].canResizeFont(true);
+    animation.renderer.elements[4].elements[0].updateDocumentData({
+        t: rider1Name
+      },
+      0
+    );
+
+    animation.renderer.elements[2].elements[0].canResizeFont(true);
+    animation.renderer.elements[2].elements[0].updateDocumentData({
+        t: team
+      },
+      0
+    );
+
+
+
+  }
+</script>
